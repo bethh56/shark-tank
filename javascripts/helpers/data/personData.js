@@ -17,12 +17,12 @@ const persons = [
     {id: "person16", name:"Kenneth", isDead: false},
     {id: "person17", name:"Liza", isDead: false},
     {id: "person18", name:"Michele", isDead: false},
-    {id: "person19", name:"Monique", isDead: false},
+    {id: "person19", name:"Monique", isDead: true},
     {id: "person20", name:"OLa", isDead: false},
     {id: "person21", name:"Sarah", isDead: false},
-    {id: "person22", name:"Stephen", isDead: false},
-    {id: "person23", name:"Steven", isDead: false},
-    {id: "person24", name:"Todd", isDead: false},
+    {id: "person22", name:"Stephen", isDead: true},
+    {id: "person23", name:"Steven", isDead: true},
+    {id: "person24", name:"Todd", isDead: true},
     {id: "person25", name:"Zachary", isDead: true},
 ];
 
@@ -30,5 +30,9 @@ const getAlivePersons = () => {
     return persons.filter((x) => x.isDead === false);
 };
 
-export default { getAlivePersons };
+const getDeadPersons = () => {
+    return persons.filter((x) => x.isDead === true);
+};
+
+export default { getAlivePersons , getDeadPersons };
 
