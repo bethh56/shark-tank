@@ -4,8 +4,8 @@ import personData from "../helpers/data/personData.js"
 const tankBuilder = () => {
     const persons = personData.getAlivePersons();
     let domString = "";
-    domString += `<div class="card w-75 mx-auto">`;
-    domString += `<div class="card-header">Featured</div>`;
+    domString += `<div class="card">`;
+    domString += `<div class="card-header text-center"><h1>Shark Tank</h1></div>`;
     domString += `<ul class="list-group list-group-flush">`;
 
     persons.forEach((person) => {
