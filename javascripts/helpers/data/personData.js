@@ -18,7 +18,7 @@ const persons = [
     {id: "person17", name:"Liza", isDead: false},
     {id: "person18", name:"Michele", isDead: false},
     {id: "person19", name:"Monique", isDead: true},
-    {id: "person20", name:"OLa", isDead: false},
+    {id: "person20", name:"Ola", isDead: false},
     {id: "person21", name:"Sarah", isDead: false},
     {id: "person22", name:"Stephen", isDead: true},
     {id: "person23", name:"Steven", isDead: true},
@@ -34,5 +34,18 @@ const getDeadPersons = () => {
     return persons.filter((x) => x.isDead === true);
 };
 
-export default { getAlivePersons , getDeadPersons };
+const randomMurder = () => {
+    const alivePeople = getAlivePersons();
+    const randomNum = Math.floor(Math.random() * alivePeople.length);
+    const deadPersonsId = alivePeople[randomNum].id;
+    const deadMan = persons.findIndex((x) => x.id === deadPersonsId);
+    persons[deadMan]. isDead = true;
+}
+
+const bringToLife = (personId) => {
+    const itLives = persons.findIndex((x) => x.id === personId);
+    persons[itLives].isDead = false;
+}
+
+export default { getAlivePersons , getDeadPersons , randomMurder , bringToLife };
 
