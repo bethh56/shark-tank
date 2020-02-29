@@ -9,8 +9,8 @@ const buildGraveyard = () => {
     domString += `<ul class="list-group list-group-flush">`;
     persons.forEach((person) => {
         domString += `<li class="list-group-item text-center">${person.name}</li>`;
+        domString += `<button id=${person.id} class="btn btn-dark revive-btn">REVIVE</button>`;
     });
-  
     domString += `</ul>`;
     domString += `</div>`; 
 
